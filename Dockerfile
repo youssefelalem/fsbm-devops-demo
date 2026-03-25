@@ -1,8 +1,8 @@
-# استخدام خادم Nginx خفيف وسريع
+# Utilisation d'un serveur Nginx léger et rapide
 FROM nginx:alpine
 
-# نسخ صفحة الويب إلى المسار الافتراضي للخادم
+# Copier la page web vers le chemin par défaut du serveur
 COPY index.html /usr/share/nginx/html/index.html
 
-# فتح المنفذ 80
+# Ouvrir le port 80
 EXPOSE 80
