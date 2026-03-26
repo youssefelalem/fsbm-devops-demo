@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPredictors — Prédiction de la Performance des Étudiants</title>
+    <meta name="description"
+        content="Application web de prédiction de la performance scolaire des étudiants marocains utilisant le Machine Learning.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">EduPredictors</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#pipeline">Pipeline</a></li>
+                <li><a href="#prediction">Prédiction</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#team">Équipe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🇲🇦 Projet Data Science</div>
+            <h1 class="hero-title">
+                Prédiction de la <span class="gradient-text">Performance</span><br>
+                des Étudiants Marocains
+            </h1>
+            <p class="hero-subtitle">
+                Une approche Machine Learning pour analyser et prédire la <strong>moyenne annuelle</strong>
+                des lycéens à partir de variables socio-économiques, comportementales et démographiques.
+            </p>
+            <div class="hero-buttons">
+                <a href="#prediction" class="btn btn-primary">
+                    <span>🧠</span> Essayer la Prédiction
+                </a>
+                <a href="#pipeline" class="btn btn-secondary">
+                    <span>📊</span> Voir le Pipeline
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="10000">0</span>
+                    <span class="stat-label">Étudiants</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="69">0</span>
+                    <span class="stat-label">Features</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Modèles</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Régions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PIPELINE ========== -->
+    <section class="section" id="pipeline">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">🔄 Processus</div>
+                <h2 class="section-title">Pipeline <span class="gradient-text">Data Science</span></h2>
+                <p class="section-subtitle">De la donnée brute à la prédiction : chaque étape de notre méthodologie.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in" data-step="1">
+                    <div class="timeline-icon timeline-icon-collect">📥</div>
+                    <div class="timeline-content">
+                        <h3>Collecte des Données</h3>
+                        <p>Dataset de <strong>10 000 étudiants</strong> marocains avec <strong>286 variables</strong>
+                            couvrant les aspects socio-économiques, académiques et comportementaux.</p>
+                        <div class="timeline-tech">Morocco_Student_Data_Pool.csv</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" data-step="2">
+                    <div class="timeline-icon timeline-icon-clean">🧹</div>
+                    <div class="timeline-content">
+                        <h3>Nettoyage & Préparation</h3>
+                        <p>Correction du décalage de colonnes, suppression de 18 colonnes vides, imputation intelligente
+                            (médiane/mode), encodage des variables catégorielles.</p>
+                        <div class="timeline-tech">clean_data.ipynb</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" data-step="3">
+                    <div class="timeline-icon timeline-icon-eda">📊</div>
+                    <div class="timeline-content">
+                        <h3>Analyse Exploratoire (EDA)</h3>
+                        <p>Distributions, corrélations, détection d'outliers, analyse bivariée et multivariée.
+                            Identification des features les plus prédictives.</p>
+                        <div class="timeline-tech">Advanced_EDA_Morocco_Students.ipynb</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" data-step="4">
+                    <div class="timeline-icon timeline-icon-model">🤖</div>
+                    <div class="timeline-content">
+                        <h3>Modélisation ML</h3>
+                        <p>Comparaison de <strong>8 algorithmes</strong> : Régression Linéaire, Ridge, Lasso,
+                            ElasticNet, Random Forest, Gradient Boosting, XGBoost et MLP. Optimisation avec
+                            RandomizedSearchCV.</p>
+                        <div class="timeline-tech">ML_student_performance_VF.ipynb</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" data-step="5">
+                    <div class="timeline-icon timeline-icon-eval">📈</div>
+                    <div class="timeline-content">
+                        <h3>Évaluation & SHAP</h3>
+                        <p>Métriques : RMSE, MAE, R². Analyse des résidus, courbes d'apprentissage, et interprétabilité
+                            avec <strong>SHAP Values</strong>.</p>
+                        <div class="timeline-tech">evaluation.ipynb</div>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" data-step="6">
+                    <div class="timeline-icon timeline-icon-deploy">🚀</div>
+                    <div class="timeline-content">
+                        <h3>Déploiement API</h3>
+                        <p>Le meilleur modèle (<strong>Gradient Boosting Tuné</strong>) est sauvegardé et servi via
+                            une API Flask pour des prédictions en temps réel.</p>
+                        <div class="timeline-tech">api.py + Flask</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Models Comparison -->
+            <div class="models-card fade-in">
+                <h3 class="models-title">⚡ Comparaison des Modèles (69 features)</h3>
+                <div class="models-table-wrapper">
+                    <table class="models-table">
+                        <thead>
+                            <tr>
+                                <th>Modèle</th>
+                                <th>R² Test</th>
+                                <th>RMSE</th>
+                                <th>MAE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Régression Linéaire</td>
+                                <td>0.9265</td>
+                                <td>0.603</td>
+                                <td>0.478</td>
+                            </tr>
+                            <tr>
+                                <td>Ridge (L2)</td>
+                                <td>0.9265</td>
+                                <td>0.603</td>
+                                <td>0.478</td>
+                            </tr>
+                            <tr>
+                                <td>Lasso (L1)</td>
+                                <td>0.9262</td>
+                                <td>0.604</td>
+                                <td>0.479</td>
+                            </tr>
+                            <tr>
+                                <td>ElasticNet (L1+L2)</td>
+                                <td>0.9262</td>
+                                <td>0.604</td>
+                                <td>0.479</td>
+                            </tr>
+                            <tr>
+                                <td>Random Forest</td>
+                                <td>0.7148</td>
+                                <td>1.189</td>
+                                <td>0.933</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>⭐ Gradient Boosting (Tuné)</td>
+                                <td><strong>0.9285</strong></td>
+                                <td><strong>0.595</strong></td>
+                                <td><strong>0.472</strong></td>
+                            </tr>
+                            <tr>
+                                <td>XGBoost</td>
+                                <td>0.9271</td>
+                                <td>0.600</td>
+                                <td>0.476</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Learning (MLP)</td>
+                                <td>0.9224</td>
+                                <td>0.620</td>
+                                <td>0.492</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREDICTION ========== -->
+    <section class="section section-dark" id="prediction">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">🧠 Intelligence Artificielle</div>
+                <h2 class="section-title">Prédiction <span class="gradient-text">Interactive</span></h2>
+                <p class="section-subtitle">Remplissez les informations ci-dessous pour prédire la moyenne annuelle d'un
+                    étudiant.</p>
+            </div>
+
+            <div class="prediction-wrapper fade-in">
+                <!-- Tabs -->
+                <div class="form-tabs">
+                    <button class="form-tab active" data-tab="tab1">👤 Personnel</button>
+                    <button class="form-tab" data-tab="tab2">👨‍👩‍👧‍👦 Famille</button>
+                    <button class="form-tab" data-tab="tab3">📚 Scolarité</button>
+                    <button class="form-tab" data-tab="tab4">🏠 Mode de Vie</button>
+                    <button class="form-tab" data-tab="tab5">🧠 Comportement</button>
+                </div>
+
+                <form id="prediction-form" novalidate>
+                    <!-- Tab 1: Personnel -->
+                    <div class="tab-content active" id="tab1">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="sexe">Sexe</label>
+                                <select id="sexe" name="sexe">
+                                    <option value="F">Féminin</option>
+                                    <option value="M">Masculin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Âge</label>
+                                <input id="age" type="number" name="age" min="17" max="19" value="18">
+                            </div>
+                            <div class="form-group">
+                                <label for="zone">Zone</label>
+                                <select id="zone" name="zone">
+                                    <option>Urbain</option>
+                                    <option>Rural</option>
+                                    <option>Semi-Urbain</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="region">Région</label>
+                                <select id="region" name="region">
+                                    <option>Casablanca-Settat</option>
+                                    <option>Rabat-Sale-Kenitra</option>
+                                    <option>Fes-Meknes</option>
+                                    <option>Marrakech-Safi</option>
+                                    <option>Tanger-Tetouan-Al Hoceima</option>
+                                    <option>Souss-Massa</option>
+                                    <option>Oriental</option>
+                                    <option>Beni Mellal-Khenifra</option>
+                                    <option>Draa-Tafilalet</option>
+                                    <option>Guelmim-Oued Noun</option>
+                                    <option>Laayoune-Sakia El Hamra</option>
+                                    <option>Dakhla-Oued Ed-Dahab</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Famille -->
+                    <div class="tab-content" id="tab2">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="revenu_familial">Revenu Familial (MAD)</label>
+                                <input id="revenu_familial" type="number" name="revenu_familial" min="0" max="70000" step="500"
+                                    value="14000">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre_freres_soeurs">Frères & Sœurs</label>
+                                <input id="nombre_freres_soeurs" type="number" name="nombre_freres_soeurs" min="0" max="6" value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre_membres_famille">Membres Famille</label>
+                                <input id="nombre_membres_famille" type="number" name="nombre_membres_famille" min="2" max="12" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="statut_parental">Statut Parental</label>
+                                <select id="statut_parental" name="statut_parental">
+                                    <option>Maries</option>
+                                    <option>Divorces</option>
+                                    <option>Veuf</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau_education_pere">Éducation du Père</label>
+                                <select id="niveau_education_pere" name="niveau_education_pere">
+                                    <option>Aucun</option>
+                                    <option>Primaire</option>
+                                    <option>Secondaire</option>
+                                    <option>Universitaire</option>
+                                    <option>Master</option>
+                                    <option>Doctorat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau_education_mere">Éducation de la Mère</label>
+                                <select id="niveau_education_mere" name="niveau_education_mere">
+                                    <option>Aucun</option>
+                                    <option>Primaire</option>
+                                    <option>Secondaire</option>
+                                    <option>Universitaire</option>
+                                    <option>Master</option>
+                                    <option>Doctorat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="soutien_familial">Soutien Familial</label>
+                                <select id="soutien_familial" name="soutien_familial">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="implication_parents">Implication des Parents</label>
+                                <select id="implication_parents" name="implication_parents">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="revenu_mensuel_pere">Revenu Mensuel du Père (MAD)</label>
+                                <input id="revenu_mensuel_pere" type="number" name="revenu_mensuel_pere" min="0" max="23000" step="500"
+                                    value="9000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Scolarité -->
+                    <div class="tab-content" id="tab3">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="niveau">Niveau</label>
+                                <select id="niveau" name="niveau">
+                                    <option>Tronc Commun</option>
+                                    <option>1Bac</option>
+                                    <option>2Bac</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="filiere">Filière</label>
+                                <select id="filiere" name="filiere">
+                                    <option>Sciences Et Technologies</option>
+                                    <option>Sciences Experimentales</option>
+                                    <option>Sciences Mathematiques</option>
+                                    <option>Sciences</option>
+                                    <option>Lettres Et Sciences Humaines</option>
+                                    <option>Sciences Economiques</option>
+                                    <option>Arts Appliques</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="heures_etude_jour">Heures d'étude / jour</label>
+                                <input id="heures_etude_jour" type="number" name="heures_etude_jour" min="0" max="8" step="0.5" value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="heures_etude_weekend">Heures d'étude weekend</label>
+                                <input id="heures_etude_weekend" type="number" name="heures_etude_weekend" min="0" max="12" step="0.5" value="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="absences_totales">Absences Totales</label>
+                                <input id="absences_totales" type="number" name="absences_totales" min="0" max="30" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cours_particuliers">Cours Particuliers</label>
+                                <select id="cours_particuliers" name="cours_particuliers">
+                                    <option>Non</option>
+                                    <option>Oui</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="heures_soutien_semaine">Soutien (h/semaine)</label>
+                                <input id="heures_soutien_semaine" type="number" name="heures_soutien_semaine" min="0" max="10" step="0.5"
+                                    value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="taux_assiduite">Taux d'Assiduité (%)</label>
+                                <input id="taux_assiduite" type="number" name="taux_assiduite" min="78" max="100" value="89">
+                            </div>
+                            <div class="form-group">
+                                <label for="taux_ponctualite">Ponctualité (%)</label>
+                                <input id="taux_ponctualite" type="number" name="taux_ponctualite" min="82" max="100" value="91">
+                            </div>
+                            <div class="form-group">
+                                <label for="taux_remise_devoirs">Remise Devoirs (%)</label>
+                                <input id="taux_remise_devoirs" type="number" name="taux_remise_devoirs" min="65" max="100" value="83">
+                            </div>
+                            <div class="form-group">
+                                <label for="annees_redoublement">Années Redoublement</label>
+                                <input id="annees_redoublement" type="number" name="annees_redoublement" min="0" max="1" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="retards">Retards</label>
+                                <input id="retards" type="number" name="retards" min="0" max="12" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau_motivation">Motivation</label>
+                                <select id="niveau_motivation" name="niveau_motivation">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="moyenne_annee_precedente">Moyenne Année Précédente</label>
+                                <input id="moyenne_annee_precedente" type="number" name="moyenne_annee_precedente" min="6" max="20" step="0.1"
+                                    value="12.5">
+                            </div>
+                            <div class="form-group">
+                                <label for="rang_annee_precedente">Rang Année Précédente</label>
+                                <input id="rang_annee_precedente" type="number" name="rang_annee_precedente" min="1" max="49" value="22">
+                            </div>
+                            <div class="form-group">
+                                <label for="notes_examens_blancs">Notes Examens Blancs</label>
+                                <input id="notes_examens_blancs" type="number" name="notes_examens_blancs" min="45" max="98" value="72">
+                            </div>
+                            <div class="form-group">
+                                <label for="effectif_classe">Effectif Classe</label>
+                                <input id="effectif_classe" type="number" name="effectif_classe" min="28" max="46" value="37">
+                            </div>
+                            <div class="form-group">
+                                <label for="cout_mensuel_soutien">Coût Mensuel Soutien (MAD)</label>
+                                <input id="cout_mensuel_soutien" type="number" name="cout_mensuel_soutien" min="0" max="1500" step="50"
+                                    value="350">
+                            </div>
+                            <div class="form-group">
+                                <label for="avertissements">Avertissements</label>
+                                <input id="avertissements" type="number" name="avertissements" min="0" max="3" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="sanctions">Sanctions</label>
+                                <input id="sanctions" type="number" name="sanctions" min="0" max="1" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Mode de Vie -->
+                    <div class="tab-content" id="tab4">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="distance_ecole_km">Distance École (km)</label>
+                                <input id="distance_ecole_km" type="number" name="distance_ecole_km" min="0" max="50" step="0.5" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="heures_sommeil_semaine">Sommeil (h/nuit)</label>
+                                <input id="heures_sommeil_semaine" type="number" name="heures_sommeil_semaine" min="4" max="12" step="0.5"
+                                    value="7">
+                            </div>
+                            <div class="form-group">
+                                <label for="activite_physique_heures_semaine">Sport (h/semaine)</label>
+                                <input id="activite_physique_heures_semaine" type="number" name="activite_physique_heures_semaine" min="0" max="14" step="0.5"
+                                    value="4">
+                            </div>
+                            <div class="form-group">
+                                <label for="temps_ecran_heures_jour">Écran (h/jour)</label>
+                                <input id="temps_ecran_heures_jour" type="number" name="temps_ecran_heures_jour" min="0" max="10" step="0.5"
+                                    value="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="participation_classe">Participation en Classe</label>
+                                <select id="participation_classe" name="participation_classe">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="attention_cours">Attention en Cours</label>
+                                <select id="attention_cours" name="attention_cours">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="confiance_en_soi">Confiance en Soi</label>
+                                <select id="confiance_en_soi" name="confiance_en_soi">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="internet">Internet à la Maison</label>
+                                <select id="internet" name="internet">
+                                    <option>Non</option>
+                                    <option value="Oui" selected>Oui</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="chambre_personnelle">Chambre Personnelle</label>
+                                <select id="chambre_personnelle" name="chambre_personnelle">
+                                    <option>Non</option>
+                                    <option value="Oui" selected>Oui</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ordinateur_portable">Ordinateur Portable</label>
+                                <select id="ordinateur_portable" name="ordinateur_portable">
+                                    <option>Non</option>
+                                    <option value="Oui" selected>Oui</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="heures_sommeil_weekend">Sommeil Weekend (h)</label>
+                                <input id="heures_sommeil_weekend" type="number" name="heures_sommeil_weekend" min="6.5" max="11" step="0.5"
+                                    value="9">
+                            </div>
+                            <div class="form-group">
+                                <label for="reseaux_sociaux_heures_jour">Réseaux Sociaux (h/jour)</label>
+                                <input id="reseaux_sociaux_heures_jour" type="number" name="reseaux_sociaux_heures_jour" min="0" max="5" step="0.5"
+                                    value="2.5">
+                            </div>
+                            <div class="form-group">
+                                <label for="jeux_video_heures_jour">Jeux Vidéo (h/jour)</label>
+                                <input id="jeux_video_heures_jour" type="number" name="jeux_video_heures_jour" min="0" max="4" step="0.5"
+                                    value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="lecture_heures_jour">Lecture (h/jour)</label>
+                                <input id="lecture_heures_jour" type="number" name="lecture_heures_jour" min="0" max="3.5" step="0.5"
+                                    value="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre_livres">Nombre de Livres</label>
+                                <input id="nombre_livres" type="number" name="nombre_livres" min="3" max="250" value="120">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Comportement & Compétences -->
+                    <div class="tab-content" id="tab5">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="comportement">Comportement</label>
+                                <select id="comportement" name="comportement">
+                                    <option>Faible</option>
+                                    <option>Moyen</option>
+                                    <option value="Bon" selected>Bon</option>
+                                    <option>Excellent</option>
+                                    <option>Remarquable</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="score_engagement">Score Engagement</label>
+                                <select id="score_engagement" name="score_engagement">
+                                    <option>Moyen</option>
+                                    <option value="Bon" selected>Bon</option>
+                                    <option>Excellent</option>
+                                    <option>Remarquable</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="score_feedback_enseignants">Feedback Enseignants</label>
+                                <select id="score_feedback_enseignants" name="score_feedback_enseignants">
+                                    <option>Moyen</option>
+                                    <option value="Bon" selected>Bon</option>
+                                    <option>Excellent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="score_collaboration">Score Collaboration</label>
+                                <select id="score_collaboration" name="score_collaboration">
+                                    <option>Moyen</option>
+                                    <option value="Eleve" selected>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prise_notes">Prise de Notes</label>
+                                <select id="prise_notes" name="prise_notes">
+                                    <option>Rarement</option>
+                                    <option value="Parfois" selected>Parfois</option>
+                                    <option>Habituellement</option>
+                                    <option>Toujours</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau_stress">Niveau de Stress</label>
+                                <select id="niveau_stress" name="niveau_stress">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="niveau_anxiete">Niveau d'Anxiété</label>
+                                <select id="niveau_anxiete" name="niveau_anxiete">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="satisfaction_ecole">Satisfaction École</label>
+                                <select id="satisfaction_ecole" name="satisfaction_ecole">
+                                    <option>Faible</option>
+                                    <option value="Moyen" selected>Moyen</option>
+                                    <option>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="satisfaction_enseignants">Satisfaction Enseignants</label>
+                                <select id="satisfaction_enseignants" name="satisfaction_enseignants">
+                                    <option>Moyen</option>
+                                    <option value="Bon" selected>Bon</option>
+                                    <option>Excellent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="efficacite_auto_apprentissage">Auto-Apprentissage</label>
+                                <select id="efficacite_auto_apprentissage" name="efficacite_auto_apprentissage">
+                                    <option>Moyen</option>
+                                    <option value="Eleve" selected>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gestion_temps">Gestion du Temps</label>
+                                <select id="gestion_temps" name="gestion_temps">
+                                    <option>Moyen</option>
+                                    <option value="Bon" selected>Bon</option>
+                                    <option>Excellent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="organisation">Organisation</label>
+                                <select id="organisation" name="organisation">
+                                    <option>Moyen</option>
+                                    <option value="Eleve" selected>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="resolution_problemes">Résolution de Problèmes</label>
+                                <select id="resolution_problemes" name="resolution_problemes">
+                                    <option>Moyen</option>
+                                    <option value="Eleve" selected>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pensee_critique">Pensée Critique</label>
+                                <select id="pensee_critique" name="pensee_critique">
+                                    <option>Moyen</option>
+                                    <option value="Eleve" selected>Eleve</option>
+                                    <option>Tres Eleve</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-lg" id="predict-btn">
+                            <span class="btn-text">🚀 Prédire la Moyenne</span>
+                            <span class="btn-loader">⏳ Calcul en cours...</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Result -->
+                <div class="result-card" id="result-card">
+                    <div class="result-header">Résultat de la Prédiction</div>
+                    <div class="gauge-container">
+                        <svg class="gauge" viewBox="0 0 200 120">
+                            <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#1e293b"
+                                stroke-width="14" stroke-linecap="round" />
+                            <path class="gauge-fill" id="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"
+                                stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round"
+                                stroke-dasharray="251.2" stroke-dashoffset="251.2" />
+                            <defs>
+                                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#f5576c" />
+                                    <stop offset="50%" stop-color="#ffc107" />
+                                    <stop offset="100%" stop-color="#43e97b" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="gauge-value" id="gauge-value">—</div>
+                        <div class="gauge-label">/ 20</div>
+                    </div>
+                    <div class="result-interpretation" id="result-interpretation"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DATASET ========== -->
+    <section class="section" id="dataset">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">📦 Données</div>
+                <h2 class="section-title">Le <span class="gradient-text">Dataset</span></h2>
+                <p class="section-subtitle">Morocco Student Data Pool — un dataset riche couvrant 12 régions du Maroc.
+                </p>
+            </div>
+
+            <div class="stats-grid fade-in">
+                <div class="stat-card">
+                    <div class="stat-card-icon">👥</div>
+                    <div class="stat-card-number" data-target="10000">0</div>
+                    <div class="stat-card-label">Étudiants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">📋</div>
+                    <div class="stat-card-number" data-target="268">0</div>
+                    <div class="stat-card-label">Colonnes (nettoyées)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">🎯</div>
+                    <div class="stat-card-number" data-target="69">0</div>
+                    <div class="stat-card-label">Features Retenues</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">🗺️</div>
+                    <div class="stat-card-number" data-target="12">0</div>
+                    <div class="stat-card-label">Régions</div>
+                </div>
+            </div>
+
+            <div class="insight-cards fade-in">
+                <div class="insight-card">
+                    <div class="insight-icon">�</div>
+                    <h4>Moyenne Année Précédente</h4>
+                    <p>Variable la plus corrélée avec la performance (r = +0.957). Le prédicteur académique dominant.
+                    </p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">⚖️</div>
+                    <h4>Équilibre des Genres</h4>
+                    <p>50.2% Filles vs 49.8% Garçons — un dataset parfaitement équilibré.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🏫</div>
+                    <h4>7 Filières</h4>
+                    <p>De Sciences Mathématiques à Arts Appliqués, toutes les filières du lycée qualifiant sont
+                        représentées.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🧹</div>
+                    <h4>Nettoyage Rigoureux</h4>
+                    <p>18 colonnes 100% vides supprimées, correction du décalage, imputation intelligente par
+                        médiane/mode.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEAM ========== -->
+    <section class="section section-dark" id="team">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">👥 L'Équipe</div>
+                <h2 class="section-title">Notre <span class="gradient-text">Équipe</span></h2>
+                <p class="section-subtitle">Master Big Data & Data Science — Année Universitaire 2025‑2026</p>
+            </div>
+
+            <div class="team-grid team-grid-5 fade-in">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="/static/screenshots/Maryem Boulaaqidate.jpeg" alt="Maryem Boulaaqidate">
+                    </div>
+                    <h4>Maryem Boulaaqidate</h4>
+                    <span class="team-role">Rédaction de rapport</span>
+                    <p>Rédaction de rapport</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="/static/screenshots/Douae Moussaoui.jpeg" alt="Douae Moussaoui">
+                    </div>
+                    <h4>Douae Moussaoui</h4>
+                    <span class="team-role">ML, PPT</span>
+                    <p>Création de ppt et Machine Learning</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="/static/screenshots/youssef el alem.jpeg" alt="Youssef Elalem">
+                    </div>
+                    <h4>Youssef Elalem</h4>
+                    <span class="team-role">Data Collecting and Data Cleaning</span>
+                    <p>Création de data statistique et cleaning data</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="/static/screenshots/Taha Kachmar.png" alt="Taha Kachmar">
+                    </div>
+                    <h4>Taha Kachmar</h4>
+                    <span class="team-role">Analyse des données(EDA)</span>
+                    <p>Analyse des données</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="/static/screenshots/mohammed rakhila.jpeg" alt="Mohammed Rakhila">
+                    </div>
+                    <h4>Mohammed Rakhila</h4>
+                    <span class="team-role">Développement Web</span>
+                    <p>Création des API et le site web</p>
+                </div>
+            </div>
+
+            <div class="supervisors fade-in">
+                <h3 class="supervisors-title">Encadré par</h3>
+                <div class="supervisors-grid">
+                    <div class="supervisor-card">
+                        <span class="supervisor-icon">🎓</span>
+                        <h4>Pr. Said Nouh</h4>
+                        <p>Encadrant Académique</p>
+                    </div>
+                    <div class="supervisor-card">
+                        <span class="supervisor-icon">🎓</span>
+                        <h4>M. Taoufik Amzil</h4>
+                        <p>Co-Encadrant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>🎓 EduPredictors — Prédiction de la Performance des Étudiants Marocains</p>
+            <p class="footer-sub">Projet Data Science • 2026</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

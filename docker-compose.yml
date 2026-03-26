@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  edu-predictors:
+    build: .
+    image: fsbm-edu-predictors:latest
+    container_name: edu-predictors-api
+    ports:
+      - "5001:5000"
+    restart: unless-stopped

@@ -1,8 +1,20 @@
-# Utilisation d'un serveur Nginx léger et rapide
-FROM nginx:alpine
+# Image Python légère et optimisée
+FROM python:3.11-slim
 
-# Copier la page web vers le chemin par défaut du serveur
-COPY index.html /usr/share/nginx/html/index.html
+# Répertoire de travail dans le conteneur
+WORKDIR /app
 
-# Ouvrir le port 80
-EXPOSE 80
+# Copier les dépendances en premier pour profiter du cache Docker
+COPY requirements.txt .
+
+# Installer les dépendances Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier tout le reste du projet
+COPY . .
+
+# Exposer le port de l'API Flask
+EXPOSE 5000
+
+# Lancer l'API avec Gunicorn (serveur de production)
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--timeout", "120", "api:app"]
